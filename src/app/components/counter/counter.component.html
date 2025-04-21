@@ -1,0 +1,16 @@
+<p>Counter value: {{ counterValue() }}</p>
+
+<div class="button-container">
+    <button mat-raised-button color="primary" (click)="increment()">
+        Increment
+    </button>
+    <button mat-raised-button color="accent" (click)="decrement()">
+        Decrement
+    </button>
+    <button mat-raised-button (click)="double()">
+        Double
+    </button>
+    <button mat-raised-button color="warn" (click)="reset()">
+        Reset
+    </button>
+</div>

@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img [src]="profile().avatar" alt="Profile avatar" class="avatar" />
+    </div>
+    <mat-card-title>{{ profile().name }}</mat-card-title>
+    <mat-card-subtitle>{{ profile().role }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    @if (!isEditing()) {
+    <p>{{ profile().bio }}</p>
+    <p>{{ profile().email }}</p>
+    } @else {
+    <form>
+      <div class="form-field">
+        <label>Name:</label>
+        <input [(ngModel)]="profile().name" name="name" />
+      </div>
+      <div class="form-field">
+        <label>Role:</label>
+        <input [(ngModel)]="profile().role" name="role" />
+      </div>
+      <div class="form-field">
+        <label>Bio:</label>
+        <textarea [(ngModel)]="profile().bio" name="bio"></textarea>
+      </div>
+      <div class="form-field">
+        <label>Email:</label>
+        <input [(ngModel)]="profile().email" name="email" type="email" />
+      </div>
+    </form>
+    }
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="toggleEdit()">
+      {{ isEditing() ? "Save" : "Edit Profile" }}
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,17 @@
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+button {
+    border-radius: 20px;
+    width: calc(50% - 4px);
+}
+
+p {
+    text-align: center;
+}
